@@ -32,7 +32,6 @@ function init() {
 	var comp=AdobeAn.getComposition("7027AE4A9434CF43A09ED5D15158A1D3");
 	var lib=comp.getLibrary();
 	var loader = new createjs.LoadQueue(false);
-	loader.installPlugin(createjs.Sound);
 	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
 	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
 	var lib=comp.getLibrary();
@@ -99,9 +98,6 @@ function handleComplete(evt,comp) {
 	makeResponsive(true,'both',true,1);	
 	AdobeAn.compositionLoaded(lib.properties.id);
 	fnStartAnimation();
-}
-function playSound(id, loop) {
-	return createjs.Sound.play(id, createjs.Sound.INTERRUPT_EARLY, 0, 0, loop);
 }
 </script>
 <!-- write your code here -->
